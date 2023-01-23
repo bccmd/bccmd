@@ -11,5 +11,5 @@ bccmd_SOURCES = src/bccmd.c \
 					src/ubcsp.h \
 					src/ubcsp.c
 
-CFLAGS = "-Wall"
-LIBS = "-lbluetooth"
+bccmd_CFLAGS = "-Wall"
+bccmd_LDADD = -lbluetooth

@@ -1,6 +1,6 @@
 
 # SPDX-License-Identifier: GPL-2.0
-AC_PREREQ([2.71])
+AC_PREREQ([2.69])
 AC_INIT([bccmd], [6.0])
 AM_INIT_AUTOMAKE
 
