@@ -12,3 +12,5 @@ bccmd_SOURCES = src/bccmd.c \
 				src/ubcsp.c
 
 bccmd_CFLAGS = -Wall
+
+dist_man_MANS = src/bccmd.1
