@@ -1131,6 +1131,7 @@ static void usage(void)
 		"\t-t <transport>     Select the transport\n"
 		"\t-d <device>        Select the device\n"
 		"\t-b <bcsp rate>     Select the bcsp transfer rate\n"
+		"\t-v, --version      Display version\n"
 		"\t-h, --help         Display help\n"
 		"\n");
 
@@ -1160,6 +1161,7 @@ static struct option main_options[] = {
 	{ "transport",	1, 0, 't' },
 	{ "device",	1, 0, 'd' },
 	{ "bcsprate", 1, 0, 'b'},
+	{ "version", 0, 0, 'v' },
 	{ "help",	0, 0, 'h' },
 	{ 0, 0, 0, 0 }
 };
@@ -1170,7 +1172,7 @@ int main(int argc, char *argv[])
 	int i, err, opt, transport = CSR_TRANSPORT_HCI;
 	speed_t bcsp_rate = B38400;
 
-	while ((opt=getopt_long(argc, argv, "+t:d:i:b:h", main_options, NULL)) != EOF) {
+	while ((opt=getopt_long(argc, argv, "+t:d:i:b:hv", main_options, NULL)) != EOF) {
 		switch (opt) {
 		case 't':
 			if (!strcasecmp(optarg, "hci"))
@@ -1202,6 +1204,9 @@ int main(int argc, char *argv[])
 				bcsp_rate = B38400;
 			}
 			break;
+		case 'v':
+			printf("%s\n", VERSION);
+			exit(0);
 		case 'h':
 		default:
 			usage();
