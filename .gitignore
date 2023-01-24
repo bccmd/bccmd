@@ -12,6 +12,20 @@
 *.a
 *.la
 *.los
+*.cache
+*.m4
+.deps
+.dirstamp
+compile
+config.*
+configure
+configure~
+depcomp
+install-sh
+Makefile
+Makefile.in
+missing
+stamp-*
 
 bccmd
 
