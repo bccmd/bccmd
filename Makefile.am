@@ -12,3 +12,7 @@ bccmd_SOURCES = src/bccmd.c \
 				src/ubcsp.c
 
 bccmd_CFLAGS = -Wall
+
+if MANPAGES
+dist_man_MANS = src/bccmd.1
+endif

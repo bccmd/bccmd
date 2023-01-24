@@ -23,5 +23,10 @@ AC_FUNC_MALLOC
 AC_FUNC_MMAP
 AC_CHECK_FUNCS([memset munmap strcasecmp strchr strdup strerror strncasecmp strpbrk strstr strtol])
 
+AC_ARG_ENABLE(manpages, AS_HELP_STRING([--disable-manpages],
+			[disable building of manual pages]),
+					[enable_manpages=${enableval}])
+AM_CONDITIONAL(MANPAGES, test "${enable_manpages}" != "no")
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
